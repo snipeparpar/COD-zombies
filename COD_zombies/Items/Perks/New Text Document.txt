@@ -1,0 +1,40 @@
+using COD_zombies.Items.Perks;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria;
+using Microsoft.Xna.Framework;
+using Terraria.ObjectData;
+
+namespace COD_zombies.Items.Perks
+{
+	public class Jug_buff : ModBuff
+	{
+		public override void SetDefaults() {
+			DisplayName.SetDefault("Juggernog");
+			Description.SetDefault("Increases defense and health");
+			Main.debuff[Type] = true;
+			Main.buffNoSave[Type] = true;
+			Main.buffNoTimeDisplay[Type] = true;
+			canBeCleared = false;
+		}
+
+		public override void Update(Player player, ref int buffIndex) {
+			Items.Perks p = player.GetModPlayer<Items.Perks>();
+
+			// We use blockyAccessoryPrevious here instead of blockyAccessory because UpdateBuffs happens before UpdateEquips but after ResetEffects.
+			if (player.townNPCs >= 1 && p.blockyAccessoryPrevious) {
+				p.blockyPower = true;
+				if (Main.myPlayer == player.whoAmI && Main.time % 1000000000000 == 0) {
+					player.QuickSpawnItem(ModContent.ItemType<ExampleBlock>());
+				}
+                player.statDefense += 20;
+                player.statHealth  += 100;
+
+			}
+			else {
+				player.DelBuff(buffIndex);
+				buffIndex--;
+			}
+		}
+	}
+}
