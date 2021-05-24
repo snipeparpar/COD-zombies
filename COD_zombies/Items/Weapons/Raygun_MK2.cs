@@ -1,67 +1,69 @@
-using COD_zombies.Items.Weapons;
+// Warning: Some assembly references could not be resolved automatically. This might lead to incorrect decompilation of some parts,
+// for ex. property getter/setter access. To get optimal decompilation results, please manually add the missing references to the list of loaded assemblies.
+// COD_zombies.Items.Weapons.Raygun_MK2
+using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
 
-namespace COD_zombies.Items.Weapons
+public class Raygun_MK2 : ModItem
 {
-	public class Raygun_MK2 : ModItem
+	public override void SetStaticDefaults()
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("It is the successor and the evolution of the Ray Gun");
-            Tooltip.SetDefault("unlike its predecessor, the Ray Gun Mark II fires in three-round bursts with no splash damage.");
-            Tooltip.SetDefault("It also has a very high penetration ability, capable of killing many zombies with one burst");
-            DisplayName.SetDefault("Raygun MK2");
-            }
+		((ModItem)this).get_Tooltip().SetDefault("It is the successor and the evolution of the Ray Gun");
+		((ModItem)this).get_Tooltip().SetDefault("unlike its predecessor, the Ray Gun Mark II fires in three-round bursts with no splash damage.");
+		((ModItem)this).get_Tooltip().SetDefault("It also has a very high penetration ability, capable of killing many zombies with one burst");
+		((ModItem)this).get_DisplayName().SetDefault("Raygun MK2");
+	}
 
-		public override void SetDefaults() {
-			item.damage = 935; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-			item.ranged = true; // sets the damage type to ranged
-			item.width = 40; // hitbox width of the item
-			item.height = 20; // hitbox height of the item
-            item.useAnimation = 12;
-			item.useTime = 4;
-			item.reuseDelay = 14;
-			item.useStyle = ItemUseStyleID.HoldingOut; // how you use the item (swinging, holding out, etc)
-			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 4; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-			item.value = 10000; // how much the item sells for (measured in copper)
-			item.rare = ItemRarityID.Expert; // the color that the item's name will be in-game
-			item.UseSound = SoundID.Item12; // The sound that this item plays when used.
-			item.autoReuse = true; // if you can hold click to automatically use it again
-			item.shoot = 10; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 16f; // the speed of the projectile (measured in pixels per frame)
-			item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Note that this is not an item Id, but just a magic value.
-		}
+	public override void SetDefaults()
+	{
+		((ModItem)this).get_item().damage = 935;
+		((ModItem)this).get_item().ranged = true;
+		((Entity)((ModItem)this).get_item()).width = 40;
+		((Entity)((ModItem)this).get_item()).height = 20;
+		((ModItem)this).get_item().useAnimation = 12;
+		((ModItem)this).get_item().useTime = 4;
+		((ModItem)this).get_item().reuseDelay = 14;
+		((ModItem)this).get_item().useStyle = 5;
+		((ModItem)this).get_item().noMelee = true;
+		((ModItem)this).get_item().knockBack = 4f;
+		((ModItem)this).get_item().value = 10000;
+		((ModItem)this).get_item().rare = -12;
+		((ModItem)this).get_item().UseSound = ((ModItem)this).get_mod().GetLegacySoundSlot((SoundType)2, "Sounds/Item/Raygun_ShootMK2");
+		((ModItem)this).get_item().autoReuse = true;
+		((ModItem)this).get_item().shoot = 10;
+		((ModItem)this).get_item().shootSpeed = 16f;
+		((ModItem)this).get_item().useAmmo = AmmoID.Bullet;
+	}
 
-
-
-			public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.AddIngredient(ItemID.LaserRifle, 1);
-			recipe.AddIngredient(ItemID.FallenStar, 500);
-			recipe.AddIngredient(ItemID.LunarBar, 200);
-			recipe.AddIngredient(mod, "Element_115", 20);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-
-
-
+	public override void AddRecipes()
+	{
+		//IL_0006: Unknown result type (might be due to invalid IL or missing references)
+		//IL_000b: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0016: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0022: Unknown result type (might be due to invalid IL or missing references)
+		//IL_002f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_003f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0052: Unknown result type (might be due to invalid IL or missing references)
+		ModRecipe val = new ModRecipe(((ModItem)this).get_mod());
+		val.AddTile(412);
+		val.AddIngredient(514, 1);
+		val.AddIngredient(75, 500);
+		val.AddIngredient(3467, 200);
+		val.AddIngredient(((ModItem)this).get_mod(), "Element_115", 20);
+		val.SetResult((ModItem)(object)this, 1);
+		val.AddRecipe();
+	}
 
 	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
-			// By returning true, the vanilla behavior will take place, which will shoot the 1st projectile, the one determined by the ammo.
-			return false;
-	
-
-
-	
-		}
-		}
-	
+	{
+		Projectile.NewProjectile(position.X, position.Y, speedX, speedY, 638, damage, knockBack, ((Entity)player).whoAmI, 0f, 0f);
+		return false;
 	}
+
+	public Raygun_MK2()
+		: this()
+	{
+	}
+}
