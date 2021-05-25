@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cKe6dsHC1lMmvX9U+L/nzeWd9pxnc0lRpxAXy+iP1zCIOvCR0H12Bdww7b1eiSz3uUp/GM830DpKNWV2zZwwtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\snipe\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\COD_zombies\\COD_zombies.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\snipe\\.nuget\\packages\\tmodloader.codeassist\\0.1.2\\tmodloader.codeassist.0.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

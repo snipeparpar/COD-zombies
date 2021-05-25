@@ -1,4 +1,4 @@
 author = snipeparpar, and leechyhax
-version = 1.6.8
+version = 1.7.6
 displayName = COD zombies
 homepage = https://forums.terraria.org/index.php?threads/cod-zombies.103347/

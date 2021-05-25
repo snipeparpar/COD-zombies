@@ -1,10 +1,40 @@
-ADDED A NEW CHEAT WEAPON THAT CAN 1 HIT ECHDEATH
+this mod is being made, bye me (snipeparpar/owner/coder/spriter) and xavierhax/leechyhax (spriter)
 
-
-this mod is being made, and i am new to scripting so this may not be the best mod
-
-https://discord.gg/HTnrN7JpHA
+https://discord.gg/WhTZCZDvvU
 
 
 COD zombies, a great game that i played as a kid and still play till this day, was play some terraria made a texture pack based on COD zombies, and started to think
 what if i make this a mod, and then i well did, but i also am cus im not done, enjoy :)
+
+
+
+UPDATE 1.7.6 USEABLE IN SURVIVAL NOW
+
+added 4 perks (music boxes)
+
+they can be equiped or just used like a normal music box
+they do just become invisible when you click it, will try to found out why soon and patch that
+all 4 of them drop from the moon lord, they have about 2.5x more of a chance to drop then 115, and they also drop from the boss bag
+will get new sprites for them soon, spriter needs to finish them
+
+-------------------------------------------
+PATCHES, AND BUG FIXES
+-------------------------------------------
+Fixed not being able to craft weapons such as 
+
+.Raygun
+.Raygun mk2
+.Mustang and Sally
+-------------------------------------------
+also made it so that you can craft these guns now
+
+.WonderWaffe
+.Hell's Retriever
+-------------------------------------------
+Fixed all 115 drop bugs and issues, such as
+
+.not dropping from moon lord bags
+.rarly spawning
+.sometimes giving over 200
+.never giving it for some reason
+-------------------------------------------
